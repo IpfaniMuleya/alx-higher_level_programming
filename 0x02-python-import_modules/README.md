@@ -6,8 +6,7 @@ This project contains Python scripts that cover topics such as importing modules
 1. [Scripts](#scripts)
 2. [Requirements](#requirements)
 3. [Usage](#usage)
-4. [Files and Directories](#files-and-directories)
-5. [Author](#author)
+4. [Author](#author)
 
 ## Scripts
 
