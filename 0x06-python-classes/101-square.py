@@ -77,12 +77,11 @@ class Square:
         - ValueError: If value has negative integers.
 
         """
-        if not isinstance(value, tuple) or len(value) != 2:
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-
-        if not all(isinstance(i, int) and i >= 0 for i in value):
-            raise ValueError("position must be a tuple of 2 positive integers")
-
         self.__position = value
 
     def area(self):
@@ -98,12 +97,13 @@ class Square:
     def my_print(self):
         """Prints the square with the character # and position."""
         if self.__size == 0:
-            print()
-        else:
-            for _ in range(self.__position[1]):
-                print()
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+            print("")
+            return
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
 
     def __str__(self):
         """
@@ -113,12 +113,11 @@ class Square:
         - str: The string representation.
 
         """
-        result = ""
-        if self.__size == 0:
-            result += "\n"
-        else:
-            for _ in range(self.__position[1]):
-                result += "\n"
-            for _ in range(self.__size):
-                result += " " * self.__position[0] + "#" * self.__size + "\n"
-        return (result.strip())
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            if i != self.__size - 1:
+                print("")
+        return ("")
