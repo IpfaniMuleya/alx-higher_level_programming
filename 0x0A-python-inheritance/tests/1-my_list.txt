@@ -1,0 +1,47 @@
+
+===========================
+Test cases for 1-my_list.py
+===========================
+
+# Test Case 1: Common case
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# Test Case 2: Empty list
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+
+# Test Case 3: List with negative numbers
+>>> negative_list = MyList()
+>>> negative_list.append(-5)
+>>> negative_list.append(10)
+>>> negative_list.append(-2)
+>>> negative_list.print_sorted()
+[-5, -2, 10]
+
+# Test Case 4: List with repeated numbers
+>>> repeated_list = MyList()
+>>> repeated_list.append(3)
+>>> repeated_list.append(3)
+>>> repeated_list.append(1)
+>>> repeated_list.append(2)
+>>> repeated_list.print_sorted()
+[1, 2, 3, 3]
+
+# Test Case 5: List with one element
+>>> single_element_list = MyList()
+>>> single_element_list.append(42)
+>>> single_element_list.print_sorted()
+[42]
+
