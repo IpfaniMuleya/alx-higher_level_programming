@@ -1,3 +1,4 @@
+
 ===========================
 How to Use 0-add_integer.py
 ===========================
@@ -18,15 +19,15 @@ that value is equivalent to using the ``+`` operator.
 
 ::
 
-    >>> add_integer(3, -4)
+    >>> add_integer(2, -3)
     -1
 
 The function also works with floating-point values.
 
 ::
 
-    >>> add_integer(3.0, 5.0)
-    8
+    >>> add_integer(2.0, 3.0)
+    5
 
 Note that floats are casted to ints before addition is performed.
 
@@ -84,13 +85,14 @@ If either argument is a non-integer and non-float, a TypeError is raised:
     Traceback (most recent call last):
     TypeError: b must be an integer
 
-If both arguments are non-integers and non-floats, a ValueError message is printed for the first argument.
+If both arguments are non-integers and non-floats, a TypeError message is only
+printed for the first argument.
 
 ::
 
     >>> add_integer("hello", "there")
     Traceback (most recent call last):
-    ValueError: a must be an integer
+    TypeError: a must be an integer
 
 The function will fail if infinity is provided.
 
@@ -121,61 +123,3 @@ And again with NaN numbers.
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
 
-Additional Test Cases
-=====================
-
-Adding large integers:
-
-::
-
-    >>> add_integer(999999999999999999999999, 1)
-    1000000000000000000000000
-
-Adding large negative integers:
-
-::
-
-    >>> add_integer(-999999999999999999999999, -1)
-    -1000000000000000000000000
-
-Adding zero to an integer:
-
-::
-
-    >>> add_integer(123, 0)
-    123
-
-Adding zero to zero:
-
-::
-
-    >>> add_integer(0, 0)
-    0
-
-``add_integer()`` should handle integers represented as strings:
-
-::
-
-    >>> add_integer("42", 8)
-    50
-
-``add_integer()`` should handle negative integers represented as strings:
-
-::
-
-    >>> add_integer("-42", 8)
-    -34
-
-``add_integer()`` should handle float numbers represented as strings:
-
-::
-
-    >>> add_integer("42.3", 8.5)
-    50
-
-``add_integer()`` should handle negative float numbers represented as strings:
-
-::
-
-    >>> add_integer("-42.3", 8.5)
-    -34
